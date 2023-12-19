@@ -19,6 +19,11 @@ def hello_world():
     return render_template('home.html')
 
 
+@app.route("/about")
+def about():
+    return render_template('about.html')
+
+
 @app.route('/login', methods=['POST' , 'GET'])
 def login():
     
@@ -28,7 +33,7 @@ def login():
         passWord = request.form.get('password')
         
         for user in users:
-            print(users)
+            
             if userName == user["username"] and passWord == user["password"]:
                 return render_template('success.html')
         else:
