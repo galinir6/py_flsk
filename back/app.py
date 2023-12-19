@@ -4,15 +4,8 @@ import json
 app = Flask(__name__)
 users= []
 
-
-
-
-
-
 with open('login_data.json', 'r') as json_file:
     users = json.load(json_file)
-
-
 
 @app.route("/")
 def hello_world():
